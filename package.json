@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "A simple utility to download Government of Canada climate data in JSON format.",
   "main": "index.js",
+  "bin": {
+    "canadian-climate": "./index.js"
+  },
+  "preferGlobal": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "activate": "npm install -g C:\\Users\\bryce\\Projects\\canadian-climate-api"
   },
   "repository": {
     "type": "git",
