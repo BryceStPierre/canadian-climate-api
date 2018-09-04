@@ -14,11 +14,22 @@
     "type": "git",
     "url": "git+https://github.com/BryceStPierre/climate-normals-cli.git"
   },
-  "keywords": ["canada", "us", "climate", "weather", "api", "json"],
+  "keywords": [
+    "canada",
+    "us",
+    "climate",
+    "weather",
+    "api",
+    "json"
+  ],
   "author": "Bryce St. Pierre",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/BryceStPierre/climate-normals-cli/issues"
   },
-  "homepage": "https://github.com/BryceStPierre/climate-normals-cli#readme"
+  "homepage": "https://github.com/BryceStPierre/climate-normals-cli#readme",
+  "dependencies": {
+    "command-line-args": "^5.0.2",
+    "command-line-usage": "^5.0.5"
+  }
 }

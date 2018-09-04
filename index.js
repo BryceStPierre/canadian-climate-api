@@ -1,12 +1,44 @@
 #!/usr/bin/env node
-
-// https://nodejs.org/docs/latest/api/process.html#process_process_argv
-
-// Delete the 0 and 1 argument (node and script.js)
-var args = process.argv.splice(process.execArgv.length + 2);
+const commandLineArgs = require('command-line-args');
+const commandLineUsage = require('command-line-usage');
 
 
+const definitions = [
+  { name: 'help', alias: 'h', type: Boolean, description: 'Print the help guide.' }
+];
+// const optionDefinitions = [
+//   { name: 'verbose', alias: 'v', type: Boolean },
+//   { name: 'src', type: String, multiple: true, defaultOption: true },
+//   { name: 'timeout', alias: 't', type: Number }
+// ]
 
-process.argv.forEach((val, index) => {
-  console.log(`${index}: ${val}`);
-});
+const options = commandLineArgs(definitions);
+
+const sections = [
+  {
+    header: 'Climate Normals CLI',
+    content: 'A simple utility for downloading climate normal data for Canada and the United States.'
+  },
+  {
+    header: 'Synopsis',
+    content: '$ climate-normals <options> <command>'
+  },
+  {
+    header: 'Options',
+    optionList: definitions
+    // optionList: [
+    //   {
+    //     name: 'output',
+    //     typeLabel: '{underline filename}',
+    //     description: 'The input to process.'
+    //   },
+    //   {
+    //     name: 'help',
+    //     description: 'Print this usage guide.'
+    //   }
+    // ]
+  }
+]
+const usage = commandLineUsage(sections);
+if (options.help)
+  console.log(usage);
