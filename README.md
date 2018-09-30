@@ -1,5 +1,5 @@
 # Canadian Climate Normals CLI
-A simple utility to download climate normals for cities in Canada and the United States. Currently serving data in JSON format, intended for use in applications.
+A simple CLI to download climate normals data for cities in Canada in JSON format; intended for use in applications.
 
 ## Getting Started
 TBD.
