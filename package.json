@@ -1,7 +1,7 @@
 {
-  "name": "climate-normals-cli",
+  "name": "canadian-climate-normals",
   "version": "1.0.0",
-  "description": "A simple utility to download Canadian and American climate data in JSON format.",
+  "description": "A simple CLI to download climate normals data for cities in Canada in JSON format; intended for use in applications.",
   "main": "index.js",
   "bin": {
     "climate-normals": "./index.js"
@@ -9,26 +9,21 @@
   "preferGlobal": true,
   "scripts": {
     "dev": "nodemon index",
-    "activate": "npm install -g C:\\Users\\bryce\\Projects\\climate-normals-cli"
+    "activate": "npm install -g C:\\Users\\bryce\\Projects\\canadian-climate-normals"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BryceStPierre/climate-normals-cli.git"
+    "url": "git+https://github.com/BryceStPierre/canadian-climate-normals.git"
   },
   "keywords": [
-    "canada",
-    "us",
-    "climate",
-    "weather",
-    "api",
-    "json"
+    "canada", "us", "climate", "weather", "api", "json"
   ],
   "author": "Bryce St. Pierre",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/BryceStPierre/climate-normals-cli/issues"
+    "url": "https://github.com/BryceStPierre/canadian-climate-normals/issues"
   },
-  "homepage": "https://github.com/BryceStPierre/climate-normals-cli#readme",
+  "homepage": "https://github.com/BryceStPierre/canadian-climate-normals#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "command-line-args": "^5.0.2",

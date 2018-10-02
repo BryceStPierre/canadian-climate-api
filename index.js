@@ -52,6 +52,5 @@ const guide = commandLineUsage([
 process.stdout.write(JSON.stringify(options));
 // console.log(options);
 
-
 if (options.help)
   console.log(guide);
