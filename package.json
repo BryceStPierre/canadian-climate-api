@@ -16,7 +16,12 @@
     "url": "git+https://github.com/BryceStPierre/canadian-climate-normals.git"
   },
   "keywords": [
-    "canada", "us", "climate", "weather", "api", "json"
+    "canada",
+    "us",
+    "climate",
+    "weather",
+    "api",
+    "json"
   ],
   "author": "Bryce St. Pierre",
   "license": "MIT",
