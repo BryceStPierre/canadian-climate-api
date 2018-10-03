@@ -1,4 +1,4 @@
-function convertToDecimalDegrees (string) {
+function convertDMSToDecimal (string) {
   var portion = string.split(String.fromCharCode(176)); // Degree symbol.
   var degrees = Number(portion[0]);
 
@@ -13,4 +13,4 @@ function convertToDecimalDegrees (string) {
   return direction * (degrees + (minutes / 60) + (seconds / 3600));
 }
 
-module.exports = convertToDecimalDegrees;
+module.exports = convertDMSToDecimal;

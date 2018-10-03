@@ -1,4 +1,4 @@
-function convertToDMS (decimal) { // Will only support Canada for now.
+function convertDecimalToDMS (decimal) { // Will only support Canada for now.
   var dms = {
     direction: decimal < 0 ? 'W' : 'N',
     degrees: parseInt(Math.abs(decimal))
@@ -9,7 +9,7 @@ function convertToDMS (decimal) { // Will only support Canada for now.
   return dms;
 }
 
-module.exports = convertToDMS;
+module.exports = convertDecimalToDMS;
 
 
 // How to convert decimal degrees to degrees,minutes,seconds

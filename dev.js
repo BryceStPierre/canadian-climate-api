@@ -1,7 +1,7 @@
 var request = require('request-promise');
 var cheerio = require('cheerio');
 
-var convertToDMS = require('./utils/convertToDMS');
+var convertToDMS = require('./utils/convertDecimalToDMS');
 var processClimateCSV = require('./utils/processClimateCSV');
 
 const climateId = 6130257;

@@ -1,38 +1,9 @@
 #!/usr/bin/env node
 const commandLineArgs = require('command-line-args');
 const commandLineUsage = require('command-line-usage');
+const args = require('./cli/args');
 
-const definitions = [
-  { 
-    name: 'country', 
-    alias: 'c', 
-    type: String, 
-    description: 'Specify the country to search.' 
-  }, { 
-    name: 'city', 
-    alias: 'n', 
-    type: String, 
-    description: 'Specify the city to search.' 
-  }, {
-    name: 'latlng',
-    alias: 'l',
-    type: Number,
-    multiple: true,
-    description: 'Specify the latitude/longitude coordinates to search.'
-  }, { 
-    name: 'output', 
-    alias: 'o', 
-    type: String, 
-    description: 'Specify the output filename.' 
-  }, { 
-    name: 'help', 
-    alias: 'h', 
-    type: Boolean, 
-    description: 'Print the help guide.' 
-  }
-];
-
-const options = commandLineArgs(definitions);
+const options = commandLineArgs(args);
 
 const guide = commandLineUsage([
   {
@@ -41,11 +12,16 @@ const guide = commandLineUsage([
   },
   {
     header: 'Sample Commands',
-    content: '> climate-normals <options>\n> climate-normals -c canada --city toronto\n> climate-normals --country us -n "los angeles"\n> climate-normals -c us -n chicago -o chicago'
+    content: `
+      > climate-normals -c calgary\n
+      > climate-normals --city vancouver --out vancouver.json\n
+      > climate-normals -c "st. johns" -y 2000 -o "st. johns"\n
+      > climate-normals --latlng 43.675672 -79.488402 --out toronto.json
+    `
   },
   {
     header: 'Options',
-    optionList: definitions
+    optionList: args
   }
 ]);
 

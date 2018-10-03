@@ -4,7 +4,7 @@
   "description": "A simple CLI to download climate normals data for cities in Canada in JSON format; intended for use in applications.",
   "main": "index.js",
   "bin": {
-    "climate-normals": "./index.js"
+    "canadian-climate-normals": "./index.js"
   },
   "preferGlobal": true,
   "scripts": {

@@ -1,9 +1,9 @@
 var parse = require('csv-parse');
 var _ = require('lodash');
 
-var convertToDecimalDegrees = require('./convertToDecimalDegrees');
-var transformClimateNormals = require('./transformClimateNormals');
-var trimElevation = require('./trimElevation');
+var convertDMSToDecimal = require('./convertDMSToDecimal');
+var trimElevationString = require('./trimElevationString');
+var transformData = require('./transformData');
 
 function processClimateCSV (csv, callback) {
   var lines = csv.split('\n');
@@ -22,10 +22,10 @@ function processClimateCSV (csv, callback) {
       station: _.capitalize(rows[0].STATION_NAME),
       province: rows[0].PROVINCE,
       latlng: [
-        convertToDecimalDegrees(rows[0].LATITUDE), 
-        convertToDecimalDegrees(rows[0].LONGITUDE)
+        convertDMSToDecimal(rows[0].LATITUDE), 
+        convertDMSToDecimal(rows[0].LONGITUDE)
       ],
-      elevation: trimElevation(rows[0].ELEVATION)
+      elevation: trimElevationString(rows[0].ELEVATION)
     };
 
     lines = csv.split('\n');    // Trim problematic lines.
@@ -41,7 +41,7 @@ function processClimateCSV (csv, callback) {
       if (err)
         return callback({ error: 'Failed to parse data rows.' });
         
-      climate.normals = transformClimateNormals(rows);
+      climate.normals = transformData(rows);
       callback(climate);
     });
   });
