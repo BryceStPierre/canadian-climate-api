@@ -1,4 +1,4 @@
-function transformDataAttribute (object) {
+function transformAttribute (object) {
   var measure = {
     label: "",
     month: [null],  // Leading null so that the month number can be used as index.
@@ -19,4 +19,4 @@ function transformDataAttribute (object) {
   return measure;
 }
 
-module.exports = transformDataAttribute;
+module.exports = transformAttribute;

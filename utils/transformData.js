@@ -1,5 +1,5 @@
-const transformDataAttribute = require('./transformDataAttribute');
-const dataAttributes = require('./dataAttributes');
+const transformAttribute = require('./transformAttribute');
+const attributes = require('../values/attributes');
 
 function transformData (rows) {
   var normals = {};
@@ -7,7 +7,7 @@ function transformData (rows) {
   rows
     .filter(o => !o[" "].includes("Date"))
     .forEach((o, i) => {
-      normals[dataAttributes[i]] = transformDataAttribute(o);
+      normals[attributes[i]] = transformAttribute(o);
     });
 
   return normals;
