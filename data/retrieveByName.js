@@ -19,7 +19,7 @@ function retrieveByName (name, year, callback) {
     request({ // ClimateId is held constant, since this appears to not need to be unique.
       uri: `http://climate.weather.gc.ca/climate_normals/bulk_data_e.html?ffmt=csv&lang=e&prov=${province}&yr=${startYear}&stnID=${stationId}&climateID=6130257+++++++++++++&submit=Download+Data`
     }).then(function (res) {
-      processClimateCSV(res, callback);
+      processClimateCSV(res, year, callback);
     }).catch(function (err) {
       console.log(err);
       callback({ error: 'Failed to retrieve climate CSV data.' });
