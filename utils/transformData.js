@@ -5,7 +5,7 @@ function transformData (rows) {
   var normals = {};
 
   rows
-    .filter(o => !o[" "].includes("Date"))
+    .filter(o => !o[" "].includes('Date'))
     .forEach((o, i) => {
       normals[attributes[i]] = transformAttribute(o);
     });

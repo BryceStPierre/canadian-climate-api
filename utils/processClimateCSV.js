@@ -1,5 +1,4 @@
 var parse = require('csv-parse');
-var _ = require('lodash');
 
 var convertDMSToDecimal = require('./convertDMSToDecimal');
 var trimElevationString = require('./trimElevationString');
@@ -19,7 +18,7 @@ function processClimateCSV (csv, callback) {
 
     var climate = {
       id: Number(rows[0].CLIMATE_ID),
-      station: _.capitalize(rows[0].STATION_NAME),
+      station: rows[0].STATION_NAME,
       province: rows[0].PROVINCE,
       latlng: [
         convertDMSToDecimal(rows[0].LATITUDE), 
@@ -28,14 +27,20 @@ function processClimateCSV (csv, callback) {
       elevation: trimElevationString(rows[0].ELEVATION)
     };
 
-    lines = csv.split('\n');    // Trim problematic lines.
-    lines.splice(0, 13);
+    var shift = climate.station.includes('*') ? 1 : 0; 
+    climate.station = climate.station.replace('*', '').toUpperCase();
+
+    lines = csv.split('\n');        // Trim problematic lines.
+    lines.splice(0, 13 + shift);    // If there is an asterisk message, we want to skip this line.
     lines.splice(1, 1);
     lines.splice(9, 1);
 
+    lines = lines.slice(0, 12);
+    console.log(lines);
+
     parse(lines.join('\n'), {
       from: 0,
-      to: 19,
+      to: 12,
       columns: true
     }, function (err, rows) {
       if (err)

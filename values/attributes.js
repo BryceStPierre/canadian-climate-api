@@ -7,9 +7,5 @@ module.exports = [
   "extremeMinTemp",
   "rainfall",
   "snowfall",
-  "precipitation",
-  "extremeDailyRainfall",
-  "extremeDailySnowfall",
-  "extremeDailyPrecipitation",
-  "extremeDailySnowDepth"
+  "precipitation"
 ];
