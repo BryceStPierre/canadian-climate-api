@@ -29,7 +29,6 @@ function processClimateCSV (csv, year, callback) {
 
     var headerShift = climate.station.includes('*') ? 1 : 0; 
     climate.station = climate.station.replace('*', '').toUpperCase();
-    console.log(climate);
 
     lines = csv.split('\n');              // Trim problematic lines.
     lines.splice(0, 13 + headerShift);    // If there is an asterisk message, we want to skip this line.
