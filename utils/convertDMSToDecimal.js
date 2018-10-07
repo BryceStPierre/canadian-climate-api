@@ -1,4 +1,4 @@
-function convertDMSToDecimal (string) {
+function convertDMSToDecimal (string) {                 // Convert degrees, minutes, seconds coordinates to decimal coordinates.
   var portion = string.split(String.fromCharCode(176)); // Degree symbol.
 
   if (!portion[0] || !portion[1])
