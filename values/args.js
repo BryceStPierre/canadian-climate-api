@@ -24,6 +24,12 @@ module.exports = [
     typeLabel: '{underline file}',
     description: 'Specify the output filename.' 
   }, { 
+    name: 'prettify', 
+    alias: 'p', 
+    type: Boolean, 
+    description: 'Prettify the output JSON data.',
+    defaultOption: false
+  }, { 
     name: 'help', 
     alias: 'h', 
     type: Boolean, 
