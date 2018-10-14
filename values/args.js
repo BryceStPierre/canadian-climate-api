@@ -5,7 +5,7 @@ module.exports = [
     type: Number, 
     typeLabel: '{italic 1990, 2000, or 2010}',
     description: 'Specify the latest year data is available.',
-    defaultOption: 2010
+    defaultValue: 2010
   }, { 
     name: 'city', 
     alias: 'c', 
@@ -28,7 +28,7 @@ module.exports = [
     alias: 'p', 
     type: Boolean, 
     description: 'Prettify the output JSON data.',
-    defaultOption: false
+    defaultValue: false
   }, { 
     name: 'help', 
     alias: 'h', 

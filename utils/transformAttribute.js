@@ -1,7 +1,7 @@
 function transformAttribute (object) {
   var measure = {
     label: "",
-    month: [null],  // Leading null so that the month number can be used as index. e.g. 1 - 12
+    month: [],
     year: 0,
   };
 

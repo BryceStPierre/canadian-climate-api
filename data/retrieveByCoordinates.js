@@ -1,7 +1,7 @@
 const request = require('request-promise');
 const cheerio = require('cheerio');
 
-const locations = require('../values/locations');
+const locations = require('./locations');
 const convertDecimalToDMS = require('../utils/convertDecimalToDMS');
 const processClimateCSV = require('../utils/processClimateCSV');
 

@@ -1,7 +1,7 @@
 const request = require('request-promise');
 const cheerio = require('cheerio');
 
-const locations = require('../values/locations');
+const locations = require('./locations');
 const processClimateCSV = require('../utils/processClimateCSV');
 
 function retrieveByName (name, year, callback) {
@@ -9,7 +9,7 @@ function retrieveByName (name, year, callback) {
   const searchURI = `http://climate.weather.gc.ca/climate_normals/${page}?searchType=stnName&txtStationName=${name}&searchMethod=contains`;
 
   request({
-    uri: uri,
+    uri: searchURI,
     transform: body => cheerio.load(body)
   }).then(function ($) {
     const stationId = Number($('table tbody').children().first().find('a').attr('href').split('stnID=')[1].split('&')[0]);
